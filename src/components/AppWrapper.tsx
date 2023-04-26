@@ -5,10 +5,15 @@ import {
   StyleSheet,
   StatusBar,
   View,
+  StyleProp,
 } from 'react-native';
 import Colors from '../Colors';
 
-function AppWrapper({children}: PropsWithChildren): JSX.Element {
+type Props = {
+  style?: StyleProp<any>;
+};
+
+function AppWrapper({children, style}: PropsWithChildren<Props>): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundColor = !isDarkMode
@@ -16,18 +21,21 @@ function AppWrapper({children}: PropsWithChildren): JSX.Element {
     : Colors.dark.background;
 
   return (
-    <SafeAreaView style={{...stylesheet.container, backgroundColor}}>
+    <SafeAreaView style={stylesheet.safeArea}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <View style={stylesheet.content}>{children}</View>
+      <View style={[{...stylesheet.container, backgroundColor}, style]}>
+        {children}
+      </View>
     </SafeAreaView>
   );
 }
 
 const stylesheet = StyleSheet.create({
-  container: {
+  safeArea: {
     flex: 1,
   },
-  content: {
+  container: {
+    flex: 1,
     padding: 20,
   },
 });

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, TextInput, StyleSheet, TouchableOpacity} from 'react-native';
 import AppWrapper from '../components/AppWrapper';
 import Title from '../components/Title';
@@ -8,6 +8,8 @@ import {HomeScreenProps} from '../type/navigation.type';
 import {DarkTheme} from '@react-navigation/native';
 
 function Home({navigation}: HomeScreenProps): JSX.Element {
+  const [query, setQuery] = useState<string>('');
+
   const searchIconColor = !DarkTheme.dark
     ? colors.light.primary
     : colors.dark.primary;
@@ -16,10 +18,14 @@ function Home({navigation}: HomeScreenProps): JSX.Element {
     <AppWrapper>
       <Title title="Discover your dream house" />
       <View style={stylesheet.viewSearchBar}>
-        <TextInput placeholder="Address..." style={stylesheet.input} />
+        <TextInput
+          placeholder="Address..."
+          style={stylesheet.input}
+          onChangeText={text => setQuery(text)}
+        />
         <TouchableOpacity
           style={stylesheet.button}
-          onPress={() => navigation.navigate('Search', {query: 'queeeert'})}>
+          onPress={() => navigation.navigate('Search', {query: 'pine'})}>
           <Icon name="search" size={30} color={searchIconColor} />
         </TouchableOpacity>
       </View>
