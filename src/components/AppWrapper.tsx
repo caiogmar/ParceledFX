@@ -4,20 +4,21 @@ import {
   SafeAreaView,
   StyleSheet,
   StatusBar,
+  View,
 } from 'react-native';
+import Colors from '../Colors';
 
 function AppWrapper({children}: PropsWithChildren): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
-  const backgroundColor = !isDarkMode ? 'red' : 'blue';
+  const backgroundColor = !isDarkMode
+    ? Colors.light.background
+    : Colors.dark.background;
 
   return (
     <SafeAreaView style={{...stylesheet.container, backgroundColor}}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        // backgroundColor={backgroundStyle.backgroundColor}
-      />
-      {children}
+      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      <View style={stylesheet.content}>{children}</View>
     </SafeAreaView>
   );
 }
@@ -25,6 +26,9 @@ function AppWrapper({children}: PropsWithChildren): JSX.Element {
 const stylesheet = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  content: {
+    padding: 20,
   },
 });
 

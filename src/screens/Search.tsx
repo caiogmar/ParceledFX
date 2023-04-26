@@ -1,8 +1,14 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import AppWrapper from '../components/AppWrapper';
+import {RootStackParamList} from '../type/navigation.type';
+import type {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
-function SearchResult(): JSX.Element {
+type Props = {
+  navigation: NativeStackNavigationProp<RootStackParamList, 'Search'>;
+};
+
+function Search({navigation}: Props): JSX.Element {
   return (
     <AppWrapper>
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
@@ -12,4 +18,4 @@ function SearchResult(): JSX.Element {
   );
 }
 
-export default SearchResult;
+export default Search;

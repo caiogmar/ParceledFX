@@ -1,8 +1,14 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import AppWrapper from '../components/AppWrapper';
+import {RootStackParamList} from '../type/navigation.type';
+import type {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
-function SingleItem(): JSX.Element {
+type Props = {
+  navigation: NativeStackNavigationProp<RootStackParamList, 'ItemView'>;
+};
+
+function ViewItem({navigation}: Props): JSX.Element {
   return (
     <AppWrapper>
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
@@ -12,4 +18,4 @@ function SingleItem(): JSX.Element {
   );
 }
 
-export default SingleItem;
+export default ViewItem;

@@ -1,5 +1,5 @@
 import Home from './Home';
-import SearchResult from './SearchResult';
-import SingleItem from './SingleItem';
+import Search from './Search';
+import ViewItem from './SingleItem';
 
-export {Home, SearchResult, SingleItem};
+export {Home, Search, ViewItem as SingleItem};

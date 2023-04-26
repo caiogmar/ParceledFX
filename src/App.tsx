@@ -1,6 +1,6 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
+ * ParceledFX Challenge App
+ * https://github.com/caiogmar/ParceledFX/
  *
  * @format
  */

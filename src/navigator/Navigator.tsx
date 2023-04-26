@@ -1,20 +1,23 @@
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import * as Routes from './Routes';
 import * as Screens from '../screens';
+import {RootStackParamList} from '../type/navigation.type';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function StackNavigator() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name={Routes.HOME} component={Screens.Home} />
       <Stack.Screen
-        name={Routes.SEARCH_RESULTS}
-        component={Screens.SearchResult}
+        name={'Home'}
+        component={Screens.Home}
+        options={{
+          headerShown: false,
+        }}
       />
-      <Stack.Screen name={Routes.SINGLE_ITEM} component={Screens.SingleItem} />
+      <Stack.Screen name={'Search'} component={Screens.Search} />
+      <Stack.Screen name={'ItemView'} component={Screens.SingleItem} />
     </Stack.Navigator>
   );
 }
