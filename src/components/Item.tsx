@@ -4,18 +4,37 @@ import {SingleItemType} from '../type/api.type';
 import {DarkTheme} from '@react-navigation/native';
 import colors from '../Colors';
 import Icon from 'react-native-vector-icons/Feather';
-import {TabView} from 'react-native-tab-view';
+import {
+  NavigationState,
+  SceneRendererProps,
+  TabBar,
+  TabView,
+} from 'react-native-tab-view';
 import ItemOwnership from './ItemOwnership';
+import ItemDetails from './ItemDetails';
+import ItemHistory from './ItemHistory';
 
 const ItemView = ({item}: {item: SingleItemType}): JSX.Element => {
   const layout = useWindowDimensions();
 
   const [tabIndex, setTabIndex] = useState(0);
 
-  const [tabRoutes] = React.useState([{key: 'ownerTab', title: 'Owner'}]);
+  const [tabRoutes] = React.useState([
+    {key: 'propertyTab', title: 'Property'},
+    {key: 'historyTab', title: 'History'},
+    {key: 'ownerTab', title: 'Owner'},
+  ]);
 
-  const renderScene = ({route}) => {
+  const renderScene = ({
+    route,
+  }: {
+    route: {key: string; title: string};
+  }): JSX.Element | null => {
     switch (route.key) {
+      case 'propertyTab':
+        return <ItemDetails item={item} />;
+      case 'historyTab':
+        return <ItemHistory item={item} />;
       case 'ownerTab':
         return <ItemOwnership item={item} />;
       default:
@@ -28,6 +47,10 @@ const ItemView = ({item}: {item: SingleItemType}): JSX.Element => {
     ? colors.dark.primary
     : colors.light.primary;
 
+  const screenBackgroundColor = !DarkTheme.dark
+    ? colors.dark.background
+    : colors.light.background;
+
   const iconColor = DarkTheme.dark
     ? colors.dark.neutral[300]
     : colors.light.neutral[300];
@@ -39,6 +62,28 @@ const ItemView = ({item}: {item: SingleItemType}): JSX.Element => {
   const borderColor = DarkTheme.dark
     ? colors.dark.neutral[100]
     : colors.light.neutral[100];
+
+  const tabTextColor = DarkTheme.dark
+    ? colors.dark.neutral[500]
+    : colors.light.neutral[500];
+
+  function renderTabBar(
+    props: SceneRendererProps & {
+      navigationState: NavigationState<{
+        key: string;
+        title: string;
+      }>;
+    },
+  ): React.ReactNode {
+    return (
+      <TabBar
+        {...props}
+        indicatorStyle={{backgroundColor: primaryColor}}
+        style={{backgroundColor: screenBackgroundColor}}
+        labelStyle={{color: tabTextColor}}
+      />
+    );
+  }
 
   return (
     <View style={stylesheet.container}>
@@ -79,6 +124,7 @@ const ItemView = ({item}: {item: SingleItemType}): JSX.Element => {
         </Text>
       </View>
 
+      {/* Property Value Row */}
       <View style={stylesheet.viewPropertyValue}>
         <View style={[stylesheet.viewPropertyValueColumn, {borderColor}]}>
           <Text style={[stylesheet.textLabel, {color: labelColor}]}>
@@ -104,14 +150,16 @@ const ItemView = ({item}: {item: SingleItemType}): JSX.Element => {
           <Text style={stylesheet.textValue}>${item.bidCapRate}</Text>
         </View>
       </View>
-      <View>
-        <TabView
-          navigationState={{index: tabIndex, routes: tabRoutes}}
-          renderScene={renderScene}
-          onIndexChange={setTabIndex}
-          initialLayout={{width: layout.width}}
-        />
-      </View>
+
+      {/* Tab View: Property details, history, ownership */}
+      <TabView
+        navigationState={{index: tabIndex, routes: tabRoutes}}
+        renderScene={renderScene}
+        onIndexChange={setTabIndex}
+        initialLayout={{width: layout.width}}
+        renderTabBar={renderTabBar}
+        style={stylesheet.tabView}
+      />
     </View>
   );
 };
@@ -124,7 +172,7 @@ const stylesheet = StyleSheet.create({
   },
   viewPropertyDetails: {
     padding: 20,
-    marginBottom: 40,
+    marginBottom: 30,
   },
   textPropertyType: {
     fontSize: 16,
@@ -154,6 +202,7 @@ const stylesheet = StyleSheet.create({
   viewPropertyValue: {
     width: '100%',
     flexDirection: 'row',
+    marginBottom: 40,
   },
   viewPropertyValueColumn: {
     flex: 1,
@@ -172,6 +221,10 @@ const stylesheet = StyleSheet.create({
   textValue: {
     fontWeight: 'bold',
     fontSize: 16,
+  },
+  tabView: {
+    height: 600,
+    backgroundColor: '#fff',
   },
 });
 

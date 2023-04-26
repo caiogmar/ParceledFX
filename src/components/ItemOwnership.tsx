@@ -1,17 +1,19 @@
 import React from 'react';
-import {StyleSheet, Text} from 'react-native';
+import {View} from 'react-native';
 import {SingleItemType} from '../type/api.type';
+import ItemTabRow from './ItemTabRow';
 
 const ItemOwnership = ({item}: {item: SingleItemType}): JSX.Element => {
-  return <Text style={stylesheet.title}>{item.owner}</Text>;
+  return (
+    <View>
+      <ItemTabRow label="Owner" value={item.owner} />
+      <ItemTabRow
+        label="Owner Address"
+        value="2202 Pine Street, San Francisco CA 94115"
+      />
+      <ItemTabRow label="Owner Type" value="P" />
+    </View>
+  );
 };
-
-const stylesheet = StyleSheet.create({
-  title: {
-    fontSize: 36,
-    paddingVertical: 40,
-    fontWeight: 'bold',
-  },
-});
 
 export default ItemOwnership;
