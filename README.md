@@ -4,8 +4,6 @@ This is a coding challenge requested by Parceled Company for a Senior React Nati
 
 ## Results
 
-### Introspective
-
 Participating in this challenge was an great opportunity to display my skills. Despite the time pressure, I'm delighted with the final outcome. Not only was I able to implement all the requested features, but I also managed to add a few extra touches. I'm particularly pleased with the organization of the project, and the use of TypeScript to ensure type safety throughout. Additionally, the minimalist design we achieved is both aesthetically pleasing and functional, and I couldn't be happier with the result.
 
 ### Screenshots
