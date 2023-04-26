@@ -11,7 +11,9 @@ Participating in this challenge was an great opportunity to display my skills. D
 Screenshots can be viewed in these links:
 
 https://ibb.co/cwrBG1t
+
 https://ibb.co/jfCq9p8
+
 https://ibb.co/VjvPyBM
 
 ## Challenge Description
