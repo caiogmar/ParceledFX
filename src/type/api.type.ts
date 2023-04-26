@@ -1,6 +1,9 @@
 export type SingleItemType = {
+  id: number;
   owner: string;
   address: string;
+  city: string;
+  state: string;
   county: string;
   taxNumber: string;
   zipcode: string;
@@ -10,4 +13,5 @@ export type SingleItemType = {
   lotSize: number;
   guidancePrice: number;
   bidCapRate: number;
+  imageUrl: string;
 };
