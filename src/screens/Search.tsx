@@ -1,14 +1,11 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import AppWrapper from '../components/AppWrapper';
-import {RootStackParamList} from '../type/navigation.type';
-import type {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {SeachScreenProps} from '../type/navigation.type';
 
-type Props = {
-  navigation: NativeStackNavigationProp<RootStackParamList, 'Search'>;
-};
+function Search({navigation, route}: SeachScreenProps): JSX.Element {
+  const {query} = route.params;
 
-function Search({navigation}: Props): JSX.Element {
   return (
     <AppWrapper>
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>

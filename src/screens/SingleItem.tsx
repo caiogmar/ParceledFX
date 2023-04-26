@@ -1,14 +1,9 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import AppWrapper from '../components/AppWrapper';
-import {RootStackParamList} from '../type/navigation.type';
-import type {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {ViewItemScreenProps} from '../type/navigation.type';
 
-type Props = {
-  navigation: NativeStackNavigationProp<RootStackParamList, 'ItemView'>;
-};
-
-function ViewItem({navigation}: Props): JSX.Element {
+function ViewItem({navigation, route}: ViewItemScreenProps): JSX.Element {
   return (
     <AppWrapper>
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>

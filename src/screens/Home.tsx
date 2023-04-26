@@ -4,15 +4,10 @@ import AppWrapper from '../components/AppWrapper';
 import Title from '../components/Title';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import colors from '../Colors';
-import type {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {RootStackParamList} from '../type/navigation.type';
+import {HomeScreenProps} from '../type/navigation.type';
 import {DarkTheme} from '@react-navigation/native';
 
-type Props = {
-  navigation: NativeStackNavigationProp<RootStackParamList, 'Home'>;
-};
-
-function Home({navigation}: Props): JSX.Element {
+function Home({navigation}: HomeScreenProps): JSX.Element {
   const searchIconColor = !DarkTheme.dark
     ? colors.light.primary
     : colors.dark.primary;
