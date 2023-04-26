@@ -67,19 +67,19 @@ function Home({navigation}: HomeScreenProps): JSX.Element {
 
         <ScrollView style={{flexDirection: 'row'}} horizontal>
           <TopItem
-            item={data[1]}
+            item={data[10]}
             onSelect={(item: SingleItemType) =>
               navigation.navigate('ItemView', {item})
             }
           />
           <TopItem
-            item={data[1]}
+            item={data[12]}
             onSelect={(item: SingleItemType) =>
               navigation.navigate('ItemView', {item})
             }
           />
           <TopItem
-            item={data[1]}
+            item={data[16]}
             onSelect={(item: SingleItemType) =>
               navigation.navigate('ItemView', {item})
             }

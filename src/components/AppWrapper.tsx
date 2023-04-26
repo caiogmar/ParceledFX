@@ -22,7 +22,10 @@ function AppWrapper({children, style}: PropsWithChildren<Props>): JSX.Element {
 
   return (
     <SafeAreaView style={stylesheet.safeArea}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      <StatusBar
+        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+        backgroundColor={Colors.light.primary}
+      />
       <View style={[{...stylesheet.container, backgroundColor}, style]}>
         {children}
       </View>

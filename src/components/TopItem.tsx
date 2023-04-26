@@ -48,13 +48,15 @@ const stylesheet = StyleSheet.create({
     marginBottom: 16,
     borderRadius: 10,
     width: SCREEN_WIDTH / 3,
+    minHeight: 225,
     marginRight: 10,
   },
   viewImage: {},
   viewContent: {
     flex: 1,
     flexDirection: 'column',
-    padding: 20,
+    paddingHorizontal: 15,
+    paddingVertical: 20,
   },
   image: {
     width: '100%',

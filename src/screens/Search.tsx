@@ -5,12 +5,18 @@ import {
   ActivityIndicator,
   StyleSheet,
   FlatList,
+  TouchableOpacity,
+  Image,
 } from 'react-native';
 import AppWrapper from '../components/AppWrapper';
 import {SeachScreenProps} from '../type/navigation.type';
 import data from '../api/data';
 import {SingleItemType} from '../type/api.type';
 import SearchItem from '../components/SearchItem';
+import {DarkTheme} from '@react-navigation/native';
+import colors from '../Colors';
+// @ts-ignore
+import ImageEmptySearch from '../assets/empty_search_image.png';
 
 function Search({navigation, route}: SeachScreenProps): JSX.Element {
   const {query} = route.params;
@@ -36,6 +42,10 @@ function Search({navigation, route}: SeachScreenProps): JSX.Element {
     }, 200);
   }
 
+  const primaryColor = DarkTheme.dark
+    ? colors.dark.primary
+    : colors.light.primary;
+
   /**
    * Renders Loading State
    */
@@ -57,7 +67,21 @@ function Search({navigation, route}: SeachScreenProps): JSX.Element {
     return (
       <AppWrapper>
         <View style={[stylesheet.container, stylesheet.contentCentered]}>
-          <Text>No houses found in your search.</Text>
+          <Image
+            source={ImageEmptySearch}
+            style={stylesheet.imageEmptySearch}
+            resizeMode="contain"
+          />
+
+          <Text style={stylesheet.textMessage}>
+            No houses found in your search.
+          </Text>
+
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Text style={[stylesheet.goBackButton, {color: primaryColor}]}>
+              Go Back
+            </Text>
+          </TouchableOpacity>
         </View>
       </AppWrapper>
     );
@@ -91,6 +115,18 @@ const stylesheet = StyleSheet.create({
   },
   loadingIndicator: {
     paddingBottom: 20,
+  },
+  imageEmptySearch: {
+    marginBottom: 20,
+    height: 120,
+  },
+  textMessage: {
+    fontSize: 16,
+    marginBottom: 20,
+    fontWeight: 'bold',
+  },
+  goBackButton: {
+    fontSize: 16,
   },
 });
 

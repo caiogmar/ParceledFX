@@ -35,7 +35,7 @@ const data: SingleItemType[] = [
     bidCapRate: 4,
     taxNumber: '987-654-321',
     imageUrl:
-      'https://i.pinimg.com/originals/61/3e/bd/613ebdd3b862c34a68b7e5103617285e.jpg',
+      'https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg',
   },
   {
     id: 3,
@@ -53,7 +53,7 @@ const data: SingleItemType[] = [
     bidCapRate: 6,
     taxNumber: '555-444-333',
     imageUrl:
-      'https://i.pinimg.com/originals/61/3e/bd/613ebdd3b862c34a68b7e5103617285e.jpg',
+      'https://cdn.houseplansservices.com/product/pk8ecmlmjnbibk8r5fr01oje77/w620x413.jpg?v=2',
   },
   {
     id: 4,
@@ -71,7 +71,7 @@ const data: SingleItemType[] = [
     bidCapRate: 5.5,
     taxNumber: '222-333-444',
     imageUrl:
-      'https://i.pinimg.com/originals/61/3e/bd/613ebdd3b862c34a68b7e5103617285e.jpg',
+      'https://i.pinimg.com/originals/dc/35/94/dc359458a6237fdc38e25d623c47dba4.jpg',
   },
   {
     id: 5,
@@ -89,7 +89,7 @@ const data: SingleItemType[] = [
     bidCapRate: 4.5,
     taxNumber: '777-888-999',
     imageUrl:
-      'https://i.pinimg.com/originals/61/3e/bd/613ebdd3b862c34a68b7e5103617285e.jpg',
+      'https://media.istockphoto.com/photos/beautiful-residential-home-exterior-on-bright-sunny-day-with-green-picture-id1211174464?k=6&m=1211174464&s=170667a&w=0&h=5wzbn6NeIJPnC_80k5GYRZ_WGOPOTKfgwtCqJKV4YBk=',
   },
   {
     id: 6,
@@ -107,7 +107,7 @@ const data: SingleItemType[] = [
     bidCapRate: 7,
     taxNumber: '111-222-333',
     imageUrl:
-      'https://i.pinimg.com/originals/61/3e/bd/613ebdd3b862c34a68b7e5103617285e.jpg',
+      'https://garden-chick.typepad.com/.a/6a00e553af986f88340133ec64e3d1970b-800wi',
   },
   {
     id: 7,
@@ -124,8 +124,7 @@ const data: SingleItemType[] = [
     guidancePrice: 1200000,
     bidCapRate: 4.5,
     taxNumber: '123-456-789',
-    imageUrl:
-      'https://i.pinimg.com/originals/61/3e/bd/613ebdd3b862c34a68b7e5103617285e.jpg',
+    imageUrl: 'https://live.staticflickr.com/65535/49207991352_8dbe64850f.jpg',
   },
   {
     id: 8,
@@ -142,8 +141,7 @@ const data: SingleItemType[] = [
     guidancePrice: 600000,
     bidCapRate: 5,
     taxNumber: '987-654-321',
-    imageUrl:
-      'https://i.pinimg.com/originals/61/3e/bd/613ebdd3b862c34a68b7e5103617285e.jpg',
+    imageUrl: 'https://live.staticflickr.com/1584/25704412282_e15d69dbe1.jpg',
   },
   {
     id: 9,
@@ -160,8 +158,7 @@ const data: SingleItemType[] = [
     guidancePrice: 2500000,
     bidCapRate: 6,
     taxNumber: '555-444-333',
-    imageUrl:
-      'https://i.pinimg.com/originals/61/3e/bd/613ebdd3b862c34a68b7e5103617285e.jpg',
+    imageUrl: 'https://live.staticflickr.com/3605/3345640014_cdb8fdebe5_n.jpg',
   },
   {
     id: 10,
@@ -178,8 +175,7 @@ const data: SingleItemType[] = [
     guidancePrice: 1500000,
     bidCapRate: 5,
     taxNumber: '222-333-444',
-    imageUrl:
-      'https://i.pinimg.com/originals/61/3e/bd/613ebdd3b862c34a68b7e5103617285e.jpg',
+    imageUrl: 'http://krobson.no-ip.biz/images/HouseT2.gif',
   },
   {
     id: 11,
@@ -197,7 +193,7 @@ const data: SingleItemType[] = [
     bidCapRate: 4,
     taxNumber: '777-888-999',
     imageUrl:
-      'https://i.pinimg.com/originals/61/3e/bd/613ebdd3b862c34a68b7e5103617285e.jpg',
+      'https://s3-production.bobvila.com/slides/26891/original/black_and_white.jpg?1591229829',
   },
   {
     id: 12,
@@ -215,7 +211,7 @@ const data: SingleItemType[] = [
     bidCapRate: 7,
     taxNumber: '111-222-333',
     imageUrl:
-      'https://i.pinimg.com/originals/61/3e/bd/613ebdd3b862c34a68b7e5103617285e.jpg',
+      'https://mydecorative.com/wp-content/uploads/2019/09/yello-exterior-color.jpg',
   },
   {
     id: 13,
@@ -233,7 +229,7 @@ const data: SingleItemType[] = [
     bidCapRate: 5,
     taxNumber: '123-456-789',
     imageUrl:
-      'https://i.pinimg.com/originals/61/3e/bd/613ebdd3b862c34a68b7e5103617285e.jpg',
+      'https://i.pinimg.com/originals/58/50/62/585062cdcdc20227a3148a178cfe7c0d.jpg',
   },
   {
     id: 14,
@@ -251,7 +247,7 @@ const data: SingleItemType[] = [
     bidCapRate: 4.5,
     taxNumber: '987-654-321',
     imageUrl:
-      'https://i.pinimg.com/originals/61/3e/bd/613ebdd3b862c34a68b7e5103617285e.jpg',
+      'https://i.pinimg.com/originals/d7/9d/82/d79d821a7915ecdcf6b3e13172c8e128.jpg',
   },
   {
     id: 15,
@@ -268,8 +264,7 @@ const data: SingleItemType[] = [
     guidancePrice: 3000000,
     bidCapRate: 6.5,
     taxNumber: '555-444-333',
-    imageUrl:
-      'https://i.pinimg.com/originals/61/3e/bd/613ebdd3b862c34a68b7e5103617285e.jpg',
+    imageUrl: 'https://live.staticflickr.com/8193/8392377708_47b08f8d49.jpg',
   },
   {
     id: 16,
@@ -286,8 +281,7 @@ const data: SingleItemType[] = [
     guidancePrice: 2000000,
     bidCapRate: 5.5,
     taxNumber: '222-333-444',
-    imageUrl:
-      'https://i.pinimg.com/originals/61/3e/bd/613ebdd3b862c34a68b7e5103617285e.jpg',
+    imageUrl: 'https://c2.staticflickr.com/4/3144/3041541377_2d8c42d690.jpg',
   },
   {
     id: 17,
@@ -305,7 +299,7 @@ const data: SingleItemType[] = [
     bidCapRate: 4,
     taxNumber: '777-888-999',
     imageUrl:
-      'https://i.pinimg.com/originals/61/3e/bd/613ebdd3b862c34a68b7e5103617285e.jpg',
+      'https://lid.zoocdn.com/1024/768/4b42bc3103cca0549f7b6949bef76be4cb54687d.jpg',
   },
   {
     id: 18,
@@ -322,8 +316,7 @@ const data: SingleItemType[] = [
     guidancePrice: 5000000,
     bidCapRate: 7,
     taxNumber: '111-222-333',
-    imageUrl:
-      'https://i.pinimg.com/originals/61/3e/bd/613ebdd3b862c34a68b7e5103617285e.jpg',
+    imageUrl: 'https://live.staticflickr.com/4817/31090850437_4a3c8750c7.jpg',
   },
 ];
 
