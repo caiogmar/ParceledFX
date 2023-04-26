@@ -1,11 +1,29 @@
-import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import React, {useState} from 'react';
+import {Image, StyleSheet, Text, View, useWindowDimensions} from 'react-native';
 import {SingleItemType} from '../type/api.type';
 import {DarkTheme} from '@react-navigation/native';
 import colors from '../Colors';
 import Icon from 'react-native-vector-icons/Feather';
+import {TabView} from 'react-native-tab-view';
+import ItemOwnership from './ItemOwnership';
 
 const ItemView = ({item}: {item: SingleItemType}): JSX.Element => {
+  const layout = useWindowDimensions();
+
+  const [tabIndex, setTabIndex] = useState(0);
+
+  const [tabRoutes] = React.useState([{key: 'ownerTab', title: 'Owner'}]);
+
+  const renderScene = ({route}) => {
+    switch (route.key) {
+      case 'ownerTab':
+        return <ItemOwnership item={item} />;
+      default:
+        return null;
+    }
+  };
+
+  // Dynamic Styles
   const primaryColor = DarkTheme.dark
     ? colors.dark.primary
     : colors.light.primary;
@@ -85,6 +103,14 @@ const ItemView = ({item}: {item: SingleItemType}): JSX.Element => {
           </Text>
           <Text style={stylesheet.textValue}>${item.bidCapRate}</Text>
         </View>
+      </View>
+      <View>
+        <TabView
+          navigationState={{index: tabIndex, routes: tabRoutes}}
+          renderScene={renderScene}
+          onIndexChange={setTabIndex}
+          initialLayout={{width: layout.width}}
+        />
       </View>
     </View>
   );
